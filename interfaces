@@ -1,0 +1,51 @@
+interface OpMat {
+    int suma(int a, int b);
+    int resta(int a, int b);
+    int multip(int a, int b);
+    int divi(int a, int b);
+}
+
+
+class Calculadora implements OpMat {
+    @Override
+    public int suma(int a, int b) {
+        return a + b;
+    }
+
+    @Override
+    public int resta(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    public int multip(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    public int divi(int a, int b) {
+        if (b != 0) {
+            return a / b;
+        } else {
+            System.out.println("IMPOSIBLE DIVIDIR POR CERO!!.");
+            return 0;
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Calculadora miCalculadora = new Calculadora();
+
+        int resultadoSuma = miCalculadora.suma(5, 3);
+        int resultadoResta = miCalculadora.resta(8, 4);
+        int resultadoMultip = miCalculadora.multip(2, 6);
+        int resultadoDivi = miCalculadora.divi(10, 2);
+
+        System.out.println("Suma: " + resultadoSuma);
+        System.out.println("Resta: " + resultadoResta);
+        System.out.println("Multiplicación: " + resultadoMultip);
+        System.out.println("División: " + resultadoDivi);
+    }
+}
